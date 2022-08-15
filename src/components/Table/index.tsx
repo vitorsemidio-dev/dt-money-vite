@@ -4,6 +4,7 @@ import {
   TransactionsTable,
 } from "../../components/Table/styles";
 import { Transaction } from "../../pages/Transactions";
+import { dateFormatter } from "../../utils/formatter";
 import { SearchForm } from "../SearchForm";
 
 interface TableProps {
@@ -26,7 +27,7 @@ export function Table({ transactions }: TableProps) {
                   </PriceHighlight>
                 </td>
                 <td>{transaction.category}</td>
-                <td>{transaction.createdAt}</td>
+                <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
               </tr>
             );
           })}
