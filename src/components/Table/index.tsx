@@ -3,10 +3,12 @@ import {
   TransactionsContainer,
   TransactionsTable,
 } from "../../components/Table/styles";
+import { SearchForm } from "../SearchForm";
 
 export function Table() {
   return (
     <TransactionsContainer>
+      <SearchForm />
       <TransactionsTable>
         <tbody>
           <tr>
