@@ -24,6 +24,10 @@ export const NewTransactionButton = styled.button`
   padding: 0 1.25rem;
   border-radius: 6px;
   cursor: pointer;
+  :focus {
+    outline: 1px solid ${(props) => props.theme.colors["green-500"]};
+    outline-offset: 4px;
+  }
   &:hover {
     background: ${(props) => props.theme.colors["green-700"]};
     transition: background-color 0.2s;
