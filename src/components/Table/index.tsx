@@ -4,7 +4,7 @@ import {
   TransactionsTable,
 } from "../../components/Table/styles";
 import { Transaction } from "../../pages/Transactions";
-import { dateFormatter } from "../../utils/formatter";
+import { dateFormatter, priceFormatter } from "../../utils/formatter";
 import { SearchForm } from "../SearchForm";
 
 interface TableProps {
@@ -23,7 +23,8 @@ export function Table({ transactions }: TableProps) {
                 <td width="50%">{transaction.description}</td>
                 <td>
                   <PriceHighlight variant={transaction.type}>
-                    {transaction.price}
+                    {transaction.type === "outcome" && "- "}
+                    {priceFormatter.format(transaction.price)}
                   </PriceHighlight>
                 </td>
                 <td>{transaction.category}</td>
