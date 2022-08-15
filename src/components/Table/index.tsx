@@ -2,13 +2,13 @@ import {
   PriceHighlight,
   TransactionsContainer,
   TransactionsTable,
-} from "../../components/Table/styles";
-import { Transaction } from "../../pages/Transactions";
-import { dateFormatter, priceFormatter } from "../../utils/formatter";
-import { SearchForm } from "../SearchForm";
+} from '../../components/Table/styles'
+import { Transaction } from '../../pages/Transactions'
+import { dateFormatter, priceFormatter } from '../../utils/formatter'
+import { SearchForm } from '../SearchForm'
 
 interface TableProps {
-  transactions: Transaction[];
+  transactions: Transaction[]
 }
 
 export function Table({ transactions }: TableProps) {
@@ -23,17 +23,17 @@ export function Table({ transactions }: TableProps) {
                 <td width="50%">{transaction.description}</td>
                 <td>
                   <PriceHighlight variant={transaction.type}>
-                    {transaction.type === "outcome" && "- "}
+                    {transaction.type === 'outcome' && '- '}
                     {priceFormatter.format(transaction.price)}
                   </PriceHighlight>
                 </td>
                 <td>{transaction.category}</td>
                 <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
               </tr>
-            );
+            )
           })}
         </tbody>
       </TransactionsTable>
     </TransactionsContainer>
-  );
+  )
 }

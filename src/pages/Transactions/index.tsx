@@ -1,20 +1,20 @@
-import { useContext, useEffect, useState } from "react";
-import { Header } from "../../components/Header";
-import { Summary } from "../../components/Summary";
-import { Table } from "../../components/Table";
-import { TransactionsContext } from "../../contexts/TransactionsContext";
+import { useContext } from 'react'
+import { Header } from '../../components/Header'
+import { Summary } from '../../components/Summary'
+import { Table } from '../../components/Table'
+import { TransactionsContext } from '../../contexts/TransactionsContext'
 
 export interface Transaction {
-  id: number;
-  description: string;
-  type: "income" | "outcome";
-  price: number;
-  category: string;
-  createdAt: string;
+  id: number
+  description: string
+  type: 'income' | 'outcome'
+  price: number
+  category: string
+  createdAt: string
 }
 
 export function Transactions() {
-  const { transactions } = useContext(TransactionsContext);
+  const { transactions } = useContext(TransactionsContext)
 
   return (
     <div>
@@ -23,5 +23,5 @@ export function Transactions() {
 
       <Table transactions={transactions} />
     </div>
-  );
+  )
 }
