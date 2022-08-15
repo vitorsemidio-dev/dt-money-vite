@@ -15,6 +15,22 @@
       "category": "Alimentação",
       "price": 50,
       "createdAt": "2022-08-15T03:30:09.444Z"
+    },
+    {
+      "description": "Rocker Burguer",
+      "price": 50,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2022-08-15T05:43:59.139Z",
+      "id": 3
+    },
+    {
+      "description": "Template NLW",
+      "price": 3600,
+      "category": "Design Layout",
+      "type": "income",
+      "createdAt": "2022-08-15T05:44:28.645Z",
+      "id": 4
     }
   ]
 }
