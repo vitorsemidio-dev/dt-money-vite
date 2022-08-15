@@ -92,10 +92,27 @@ export const TransactionTypeButton = styled(
   cursor: pointer;
   border: 0;
   color: ${(props) => props.theme.colors["gray-300"]};
+
   svg {
     color: ${(props) =>
       props.variant === "income"
         ? props.theme.colors["green-300"]
         : props.theme.colors["red-300"]};
+  }
+
+  &[data-state="unchecked"]:hover {
+    transition: background-color 0.2s;
+    background: ${(props) => props.theme.colors["gray-600"]};
+  }
+
+  &[data-state="checked"] {
+    color: ${(props) => props.theme.colors.white};
+    background: ${(props) =>
+      props.variant === "income"
+        ? props.theme.colors["green-500"]
+        : props.theme.colors["red-500"]};
+    svg {
+      color: ${(props) => props.theme.colors.white};
+    }
   }
 `;
