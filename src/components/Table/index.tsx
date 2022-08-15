@@ -3,30 +3,35 @@ import {
   TransactionsContainer,
   TransactionsTable,
 } from "../../components/Table/styles";
+import { Transaction } from "../../pages/Transactions";
+import { dateFormatter, priceFormatter } from "../../utils/formatter";
 import { SearchForm } from "../SearchForm";
 
-export function Table() {
+interface TableProps {
+  transactions: Transaction[];
+}
+
+export function Table({ transactions }: TableProps) {
   return (
     <TransactionsContainer>
       <SearchForm />
       <TransactionsTable>
         <tbody>
-          <tr>
-            <td width="50%">Desenvolvimento de site</td>
-            <td>
-              <PriceHighlight variant="income">R$ 12.000,00</PriceHighlight>
-            </td>
-            <td>Venda</td>
-            <td>10/05/2022</td>
-          </tr>
-          <tr>
-            <td width="50%">Hambúrguer</td>
-            <td>
-              <PriceHighlight variant="outcome">-R$ 59,00</PriceHighlight>
-            </td>
-            <td>Alimentação</td>
-            <td>12/05/2022</td>
-          </tr>
+          {transactions.map((transaction) => {
+            return (
+              <tr key={transaction.id}>
+                <td width="50%">{transaction.description}</td>
+                <td>
+                  <PriceHighlight variant={transaction.type}>
+                    {transaction.type === "outcome" && "- "}
+                    {priceFormatter.format(transaction.price)}
+                  </PriceHighlight>
+                </td>
+                <td>{transaction.category}</td>
+                <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </TransactionsTable>
     </TransactionsContainer>
