@@ -86,6 +86,7 @@ O projeto foi desenvolvido com as seguintes tecnologias:
 - [Axios](https://axios-http.com/)
 - [ESLint](https://eslint.org/)
 - [Json Server](https://github.com/typicode/json-server)
+- [Radix UI](https://www.radix-ui.com/)
 - [React](https://pt-br.reactjs.org/)
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 - [Rocketseat eslint-config](https://github.com/Rocketseat/eslint-config-rocketseat)
